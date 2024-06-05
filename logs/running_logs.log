@@ -416,3 +416,11 @@ Traceback (most recent call last):
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 UnicodeEncodeError: 'charmap' codec can't encode characters in position 19-38: character maps to <undefined>
 [2024-06-05 00:08:19,494: INFO: _internal: 127.0.0.1 - - [05/Jun/2024 00:08:19] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2024-06-05 10:42:39,945: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.1.12:8080]
+[2024-06-05 10:42:39,947: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-06-05 10:43:23,602: INFO: _internal: 127.0.0.1 - - [05/Jun/2024 10:43:23] "GET / HTTP/1.1" 200 -]
+[2024-06-05 10:43:37,779: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-06-05 10:43:39,527: INFO: _internal: 127.0.0.1 - - [05/Jun/2024 10:43:39] "POST /predict HTTP/1.1" 200 -]
