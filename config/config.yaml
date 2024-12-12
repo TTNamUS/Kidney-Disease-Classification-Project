@@ -6,6 +6,7 @@ data_ingestion:
   source_URL: https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing
   local_data_file: artifacts/data_ingestion/data.zip
   unzip_dir: artifacts/data_ingestion
+  data_name: kidney-ct-scan-image
 
 prepare_base_model:
   root_dir: artifacts/prepare_base_model

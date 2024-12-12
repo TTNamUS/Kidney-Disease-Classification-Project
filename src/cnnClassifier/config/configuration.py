@@ -10,10 +10,12 @@ class ConfigurationManager:
     def __init__(
         self,
         config_filepath = CONFIG_FILE_PATH,
-        params_filepath = PARAMS_FILE_PATH):
+        params_filepath = PARAMS_FILE_PATH,
+        services_filepath = SERVICES_FILE_PATH):
 
         self.config = read_yaml(config_filepath)
         self.params = read_yaml(params_filepath)
+        self.services = read_yaml(services_filepath)
 
         create_directories([self.config.artifacts_root])
 
@@ -57,7 +59,7 @@ class ConfigurationManager:
         training = self.config.training
         prepare_base_model = self.config.prepare_base_model
         params = self.params
-        training_data = os.path.join(self.config.data_ingestion.unzip_dir, "kidney-ct-scan-image")
+        training_data = os.path.join(self.config.data_ingestion.unzip_dir, self.config.data_ingestion.data_name)
         create_directories([
             Path(training.root_dir)
         ])
@@ -78,9 +80,10 @@ class ConfigurationManager:
 
     def get_evaluation_config(self) -> EvaluationConfig:
         eval_config = EvaluationConfig(
-            path_of_model="artifacts/training/model.h5",
-            training_data="artifacts/data_ingestion/kidney-ct-scan-image",
-            mlflow_uri="https://dagshub.com/TTNamUS/Kidney-Disease-Classification-Project.mlflow",
+            path_of_model=self.config.training.trained_model_path,
+            training_data=os.path.join(self.config.data_ingestion.unzip_dir, self.config.data_ingestion.data_name),
+            dagshub_repo_owner=self.services.dagshub_repo_owner,
+            dagshub_repo_name=self.services.dagshub_repo_name,
             all_params=self.params,
             params_image_size=self.params.IMAGE_SIZE,
             params_batch_size=self.params.BATCH_SIZE

@@ -38,6 +38,7 @@ class EvaluationConfig:
     path_of_model: Path
     training_data: Path
     all_params: dict
-    mlflow_uri: str
+    dagshub_repo_owner: str
+    dagshub_repo_name: str
     params_image_size: list
     params_batch_size: int

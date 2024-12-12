@@ -7,7 +7,7 @@ from cnnClassifier.entity.config_entity import EvaluationConfig
 from cnnClassifier.utils.common import read_yaml, create_directories,save_json
 
 import dagshub
-
+import mlflow
 
 class Evaluation:
     def __init__(self, config: EvaluationConfig):
@@ -48,7 +48,7 @@ class Evaluation:
         self.model = self.load_model(self.config.path_of_model)
         self._valid_generator()
         self.score = self.model.evaluate(self.valid_generator)
-        self.save_score()
+        # self.save_score()
 
     def save_score(self):
         scores = {"loss": self.score[0], "accuracy": self.score[1]}
@@ -56,9 +56,7 @@ class Evaluation:
 
     
     def log_into_mlflow(self):
-        dagshub.init(repo_owner='TTNamUS', repo_name='Kidney-Disease-Classification-Project', mlflow=True)
-        
-        mlflow.set_registry_uri(self.config.mlflow_uri)
+        dagshub.init(repo_owner=self.config.dagshub_repo_owner, repo_name=self.config.dagshub_repo_name, mlflow=True)
         tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
         
         with mlflow.start_run():
