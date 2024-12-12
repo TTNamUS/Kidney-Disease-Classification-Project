@@ -56,7 +56,7 @@ class ConfigurationManager:
     
 
     def get_training_config(self) -> TrainingConfig:
-        training = self.config.training
+        training = self.config.trained_model
         prepare_base_model = self.config.prepare_base_model
         params = self.params
         training_data = os.path.join(self.config.data_ingestion.unzip_dir, self.config.data_ingestion.data_name)
@@ -80,7 +80,7 @@ class ConfigurationManager:
 
     def get_evaluation_config(self) -> EvaluationConfig:
         eval_config = EvaluationConfig(
-            path_of_model=self.config.training.trained_model_path,
+            path_of_model=self.config.trained_model.trained_model_path,
             training_data=os.path.join(self.config.data_ingestion.unzip_dir, self.config.data_ingestion.data_name),
             dagshub_repo_owner=self.services.dagshub_repo_owner,
             dagshub_repo_name=self.services.dagshub_repo_name,
