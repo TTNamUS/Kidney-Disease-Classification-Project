@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Navbar } from "flowbite-react";
-import Image from "next/image";
+// import Image from "next/image";
 import ThemeSwitcher from "./ThemeButton";
 
 const NavbarComponent = () => {
