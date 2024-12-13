@@ -8,20 +8,18 @@ import os
 
 
 class PredictionPipeline:
-    def __init__(self,filename):
-        self.filename = filename
+    def __init__(self, image):
+        self.image = image
         self.config = read_yaml(CONFIG_FILE_PATH)
 
 
     
     def predict(self):
         # load model
-        model = load_model(os.path.join(self.config.training.trained_model_path))
+        model = load_model(os.path.join(self.config.trained_model.trained_model_path))
 
-        image_name = self.filename
-        test_image = image.load_img(image_name, target_size = (224, 224))
-        test_image = image.img_to_array(test_image)
-        test_image = np.expand_dims(test_image, axis = 0)
+        img_array = np.array(self.image.resize((224, 224))) / 255.0
+        test_image = np.expand_dims(img_array, axis = 0)
         result = np.argmax(model.predict(test_image), axis=1)
         print(result)
 

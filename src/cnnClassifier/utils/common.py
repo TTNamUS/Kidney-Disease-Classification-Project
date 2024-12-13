@@ -9,7 +9,8 @@ from box import ConfigBox
 from pathlib import Path
 from typing import Any
 import base64
-
+from io import BytesIO
+from PIL import Image
 
 
 @ensure_annotations
@@ -125,11 +126,13 @@ def get_size(path: Path) -> str:
     return f"~ {size_in_kb} KB"
 
 
-def decodeImage(imgstring, fileName):
-    imgdata = base64.b64decode(imgstring)
-    with open(fileName, 'wb') as f:
-        f.write(imgdata)
-        f.close()
+def decodeImage(imgstring, fileName: None):
+    imgdata = base64.b64decode(imgstring.split(",")[1])
+    if fileName:
+        with open(fileName, 'wb') as f:
+            f.write(imgdata)
+            f.close()
+    return Image.open(BytesIO(imgdata))
 
 
 def encodeImageIntoBase64(croppedImagePath):

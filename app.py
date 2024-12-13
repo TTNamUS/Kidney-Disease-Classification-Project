@@ -1,52 +1,43 @@
-from flask import Flask, request, jsonify, render_template
-import os
-from flask_cors import CORS, cross_origin
+from fastapi import FastAPI, HTTPException, Request
+from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
 from cnnClassifier.utils.common import decodeImage
 from cnnClassifier.pipeline.prediction import PredictionPipeline
 
+app = FastAPI()
 
+# CORS settings
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
-os.putenv('LANG', 'en_US.UTF-8')
-os.putenv('LC_ALL', 'en_US.UTF-8')
+@app.get("/")
+def root():
+    return "Kidney Disease Detector Backend"
 
-app = Flask(__name__)
-CORS(app)
+class ImageRequest(BaseModel):
+    image: str
 
-
-class ClientApp:
-    def __init__(self):
-        self.filename = "inputImage.jpg"
-        self.classifier = PredictionPipeline(self.filename)
-
-
-@app.route("/", methods=['GET'])
-@cross_origin()
-def home():
-    return render_template('index.html')
-
-
-
-
-@app.route("/train", methods=['GET','POST'])
-@cross_origin()
-def trainRoute():
-    # os.system("python main.py")
-    os.system("dvc repro")
-    return "Training done successfully!"
-
-
-
-@app.route("/predict", methods=['POST'])
-@cross_origin()
-def predictRoute():
-    image = request.json['image']
-    decodeImage(image, clApp.filename)
-    result = clApp.classifier.predict()
-    return jsonify(result)
-
+@app.post("/predict")
+def predict(request: ImageRequest):
+    filename = "inputImage.png"
+    
+    try:
+        image = decodeImage(request.image, filename)
+        classifier = PredictionPipeline(image)
+        result = classifier.predict()
+        print(result)
+        return result
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error during prediction: {e}")
+        
+    
 
 if __name__ == "__main__":
-    clApp = ClientApp()
-
-    app.run(host='0.0.0.0', port=8080) #for AWS
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8080)
 

@@ -649,3 +649,252 @@ x==========x]
 [2024-12-13 00:17:40,622: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage completed <<<<<<
 
 x==========x]
+[2024-12-13 10:23:44,773: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 10:23:44,796: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.1.17:8080]
+[2024-12-13 10:23:44,796: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-12-13 10:23:54,933: INFO: _internal: 127.0.0.1 - - [13/Dec/2024 10:23:54] "OPTIONS /predict HTTP/1.1" 200 -]
+[2024-12-13 10:23:55,197: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "box\box.py", line 503, in box.box.Box.__getitem__
+KeyError: 'training'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\box.py", line 536, in box.box.Box.__getattr__
+  File "box\box.py", line 524, in box.box.Box.__getitem__
+box.exceptions.BoxKeyError: "'training'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\box.py", line 538, in box.box.Box.__getattr__
+AttributeError: 'ConfigBox' object has no attribute 'training'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\config_box.py", line 28, in box.config_box.ConfigBox.__getattr__
+  File "box\box.py", line 552, in box.box.Box.__getattr__
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'training'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\box.py", line 503, in box.box.Box.__getitem__
+KeyError: 'training'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "box\box.py", line 536, in box.box.Box.__getattr__
+  File "box\box.py", line 524, in box.box.Box.__getitem__
+box.exceptions.BoxKeyError: "'training'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "box\box.py", line 538, in box.box.Box.__getattr__
+AttributeError: 'ConfigBox' object has no attribute 'training'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\MY FOLDER\MY LEARNING\TTNamUS\KidneyProject\Kidney-Disease-Classification-Project\venv\lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\MY FOLDER\MY LEARNING\TTNamUS\KidneyProject\Kidney-Disease-Classification-Project\venv\lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\MY FOLDER\MY LEARNING\TTNamUS\KidneyProject\Kidney-Disease-Classification-Project\venv\lib\site-packages\flask_cors\extension.py", line 194, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "D:\MY FOLDER\MY LEARNING\TTNamUS\KidneyProject\Kidney-Disease-Classification-Project\venv\lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\MY FOLDER\MY LEARNING\TTNamUS\KidneyProject\Kidney-Disease-Classification-Project\venv\lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "D:\MY FOLDER\MY LEARNING\TTNamUS\KidneyProject\Kidney-Disease-Classification-Project\venv\lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "D:\MY FOLDER\MY LEARNING\TTNamUS\KidneyProject\Kidney-Disease-Classification-Project\app.py", line 44, in predictRoute
+    result = clApp.classifier.predict()
+  File "d:\my folder\my learning\ttnamus\kidneyproject\kidney-disease-classification-project\src\cnnClassifier\pipeline\prediction.py", line 19, in predict
+    model = load_model(os.path.join(self.config.training.trained_model_path))
+  File "box\config_box.py", line 30, in box.config_box.ConfigBox.__getattr__
+  File "box\box.py", line 552, in box.box.Box.__getattr__
+box.exceptions.BoxKeyError: "'ConfigBox' object has no attribute 'training'"
+[2024-12-13 10:23:55,220: INFO: _internal: 127.0.0.1 - - [13/Dec/2024 10:23:55] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2024-12-13 11:03:58,564: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:04:00,215: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:05:39,864: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:08:59,875: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:18:12,756: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:18:14,464: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:18:15,027: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:18:15,246: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:18:15,412: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:24:54,792: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:25:03,093: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:25:03,778: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:25:04,009: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:25:04,178: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:25:04,356: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:25:04,550: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:25:04,819: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:25:05,083: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:25:05,316: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:25:05,511: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:25:05,715: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:25:05,956: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:25:12,158: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:25:19,326: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:25:20,099: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:25:20,474: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:25:20,711: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:25:20,903: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:25:21,433: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:25:21,957: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:25:22,509: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:26:23,281: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:26:27,653: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:27:30,690: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:27:32,536: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:27:33,059: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:27:33,263: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:27:33,457: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:27:33,689: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:27:33,885: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:27:34,084: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:27:34,269: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:28:26,930: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:28:31,595: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:28:37,253: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:28:38,440: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:28:38,896: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:28:39,125: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:28:39,303: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:28:39,491: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:28:55,386: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:28:56,760: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:28:56,969: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:28:57,148: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:28:57,331: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:28:57,522: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:28:57,705: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:28:57,890: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:28:58,068: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:28:58,242: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:28:58,400: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:28:58,603: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:28:58,775: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:28:58,976: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:28:59,135: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:28:59,332: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:28:59,509: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:28:59,707: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:29:00,086: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:29:00,251: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:29:16,689: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:29:37,358: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:29:40,802: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:29:42,098: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:29:42,337: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:29:45,873: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:29:48,154: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:30:46,212: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:38:32,648: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:43:01,501: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:43:19,842: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:43:24,129: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:45:39,763: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:45:48,866: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:45:49,867: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:45:50,513: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:45:51,180: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:46:13,022: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:46:15,086: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:46:15,655: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:47:06,789: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:47:08,252: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:47:09,367: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:47:09,971: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:47:10,153: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:47:10,315: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:47:10,477: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:47:27,881: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:47:29,166: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:47:29,596: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:47:29,781: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:47:29,939: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:47:30,111: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:47:30,279: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:47:30,469: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:47:30,590: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:47:30,755: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:47:30,942: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:47:55,219: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:48:03,847: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:48:04,936: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:51:37,772: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 11:51:37,795: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.1.17:8080]
+[2024-12-13 11:51:37,795: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2024-12-13 11:51:39,260: INFO: _internal: 127.0.0.1 - - [13/Dec/2024 11:51:39] "GET / HTTP/1.1" 200 -]
+[2024-12-13 11:51:44,019: ERROR: app: Exception on /predict [POST]]
+Traceback (most recent call last):
+  File "D:\MY FOLDER\MY LEARNING\TTNamUS\KidneyProject\Kidney-Disease-Classification-Project\venv\lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\MY FOLDER\MY LEARNING\TTNamUS\KidneyProject\Kidney-Disease-Classification-Project\venv\lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\MY FOLDER\MY LEARNING\TTNamUS\KidneyProject\Kidney-Disease-Classification-Project\venv\lib\site-packages\flask_cors\extension.py", line 194, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "D:\MY FOLDER\MY LEARNING\TTNamUS\KidneyProject\Kidney-Disease-Classification-Project\venv\lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\MY FOLDER\MY LEARNING\TTNamUS\KidneyProject\Kidney-Disease-Classification-Project\venv\lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "D:\MY FOLDER\MY LEARNING\TTNamUS\KidneyProject\Kidney-Disease-Classification-Project\venv\lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "D:\MY FOLDER\MY LEARNING\TTNamUS\KidneyProject\Kidney-Disease-Classification-Project\app.py", line 86, in predictRoute
+    decodeImage(image, clApp.filename)
+  File "d:\my folder\my learning\ttnamus\kidneyproject\kidney-disease-classification-project\src\cnnClassifier\utils\common.py", line 129, in decodeImage
+    imgdata = base64.b64decode(imgstring.split(",")[1])
+IndexError: list index out of range
+[2024-12-13 11:51:44,023: INFO: _internal: 127.0.0.1 - - [13/Dec/2024 11:51:44] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -]
+[2024-12-13 13:00:36,540: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 13:01:58,986: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 13:02:36,090: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 13:04:25,121: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 13:04:25,550: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-12-13 13:04:43,564: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 13:04:43,743: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-12-13 13:04:51,449: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 13:04:51,638: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-12-13 13:14:14,041: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 13:14:14,308: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-12-13 13:14:18,784: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 13:14:18,975: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-12-13 13:16:57,193: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 13:16:57,480: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-12-13 13:16:59,555: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 13:16:59,737: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-12-13 13:18:25,528: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 13:18:25,727: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-12-13 13:18:35,162: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 13:18:35,347: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-12-13 13:18:36,731: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 13:18:36,916: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-12-13 13:18:37,388: WARNING: polymorphic_function: 5 out of the last 5 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x0000025524BDD7E0> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.]
+[2024-12-13 13:18:39,434: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 13:18:39,618: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-12-13 13:18:40,073: WARNING: polymorphic_function: 6 out of the last 6 calls to <function TensorFlowTrainer.make_predict_function.<locals>.one_step_on_data_distributed at 0x0000025524C3AB00> triggered tf.function retracing. Tracing is expensive and the excessive number of tracings could be due to (1) creating @tf.function repeatedly in a loop, (2) passing tensors with different shapes, (3) passing Python objects instead of tensors. For (1), please define your @tf.function outside of the loop. For (2), @tf.function has reduce_retracing=True option that can avoid unnecessary retracing. For (3), please refer to https://www.tensorflow.org/guide/function#controlling_retracing and https://www.tensorflow.org/api_docs/python/tf/function for  more details.]
+[2024-12-13 13:18:40,949: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 13:18:41,316: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-12-13 13:18:42,696: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 13:18:42,880: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-12-13 13:18:43,706: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 13:18:43,890: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-12-13 13:34:12,584: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 13:34:12,772: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-12-13 13:34:17,190: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-12-13 13:34:17,384: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
